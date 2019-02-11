@@ -1,0 +1,50 @@
+<br>
+<br>
+<div>
+<div class="row">
+  <div class="col-lg-2">
+    <label>First Name</label>
+    <input type="text" class="form-control" placeholder="Firstname" [(ngModel)]="newFirst">
+  </div>
+  <div class="col-lg-3">
+    <label>Last Name</label>
+    <input type="text" class="form-control" placeholder="Lastname" [(ngModel)]="newLast">
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-lg-2">
+    <label>Email address</label>
+    <input type="text" class="form-control" placeholder="Email" [(ngModel)]="newEmail">
+  </div>
+  <div class="col-lg-3">
+    <label>Mailing Address</label>
+    <input type="text" class="form-control" placeholder="Address" [(ngModel)]="newAddress">
+  </div>
+</div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-lg-2">
+    <label>City</label>
+    <input type="text" class="form-control" placeholder="City" [(ngModel)]="newCity">
+  </div>
+  <div class="col-lg-3">
+    <label>State</label>
+    <input type="text" class="form-control" placeholder="State" [(ngModel)]="newState">
+  </div>
+  <div class="col-lg-2">
+    <label>Zipcode</label>
+    <input type="text" class="form-control" placeholder="Zipcode" [(ngModel)]="newZip">
+  </div>
+</div>
+
+
+<br>
+  <button type="submit" class="btn btn-primary" (click)="processUser()">Submit</button>
+<h3>{{resultMsg}}</h3>
+
+<br>
+<br>

@@ -1,0 +1,13 @@
+<h4>{{success}}</h4>
+<br>
+
+<label class="btn btn-success btn" (change)="selectFile($event)">
+  <input type="file" id="fileUpload" style="display: none"/>Choose File</label>
+
+&nbsp;
+&nbsp;
+
+<button class="btn btn-success btn" [disabled]="!selectedFiles"
+        (click)="upload()">Upload</button>
+<br>
+<h4>{{fileName}}</h4>

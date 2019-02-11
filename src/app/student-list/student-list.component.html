@@ -1,0 +1,70 @@
+<style>
+  p.dotted {border-style: dotted;}
+  p.dashed {border-style: dashed;}
+  p.solid {border-style: solid;}
+  p.double {border-style: double;}
+  p.groove {border-style: groove;}
+  p.ridge {border-style: ridge;}
+  p.inset {border-style: inset;}
+  p.outset {border-style: outset;}
+  p.none {border-style: none;}
+  p.hidden {border-style: hidden;}
+  p.mix {border-style: dotted dashed solid double;}
+</style>
+<br>
+
+<div align="center">
+<p class="dashed" style="width: 400px; height: 150px;">
+<app-form-upload (Upload)="getRecords(10)"></app-form-upload>
+</p>
+</div>
+
+<br>
+<br>
+
+<div id="tableShow">
+
+  <form>
+    <input type="text" [(ngModel)]="searchText" name="search" placeholder="Enter first, last, or email..."><i class="fa fa-envelope-o"></i>
+    &nbsp;
+    &nbsp;
+    <button type="button" class="btn btn-success btn-lg" (click)="searchTable()">Search Student Records</button>
+  </form>
+
+  <h3>{{resultMessage}}</h3>
+  <br>
+  <br>
+  <table data-toggle="table" id="myTable" align="center" width="1000px">
+  <tr>
+    <th class="btn-success" scope="col" bgcolor="#00b300" (click)="sortTable(0)">First Name</th>
+    <th class="btn-success" scope="col" bgcolor="#00b300" (click)="sortTable(1)">Last Name</th>
+    <th class="btn-success" scope="col" bgcolor="#00b300" (click)="sortTable(2)">Email</th>
+    <th class="btn-success" align="center" bgcolor="#00b300" scope="col" (click)="sortTable(3)">Address</th>
+    <th class="btn-success" scope="col" bgcolor="#00b300" (click)="sortTable(4)">City</th>
+    <th class="btn-success" scope="col" bgcolor="#00b300" (click)="sortTable(5)">State</th>
+    <th class="btn-success" scope="col" bgcolor="#00b300" (click)="sortTable(6)">Zipcode</th>
+  </tr>
+  <tr *ngFor="let x of customersMain | async">
+    <td class="btn-default" routerLink="/editCustomer" (click)="editCust(x.id,x.firstName,x.last,x.email,x.address,x.city,x.state,x.zip)">{{ x.firstName }}</td>
+    <td>{{ x.last }}</td>
+    <td>{{ x.email }}</td>
+    <td>{{ x.address }}</td>
+    <td>{{ x.city }}</td>
+    <td>{{ x.state }}</td>
+    <td>{{ x.zip }}</td>
+  </tr>
+</table>
+</div>
+<br>
+<!--<button type="button" class="btn-default" (click)="getRecords(currentResultsPerPage)">Next Page</button>-->
+<br>
+<br>
+<form>
+  <input class="input-sm" style="color: black" [(ngModel)]="filter" name="filter" placeholder="How many results to view?">
+  &nbsp;
+  &nbsp;
+  <button class="btn-default" (click)="getRecords(filter)">Filter Student Records</button>
+</form>
+<br>
+<app-email></app-email>
+

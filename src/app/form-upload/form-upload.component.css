@@ -1,0 +1,25 @@
+
+label {
+  font-size: 25px;
+  font-family: Georgia;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.divider{
+  width:5px;
+  height:auto;
+  display:inline-block;
+}
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+h4 {
+  color: white;
+}

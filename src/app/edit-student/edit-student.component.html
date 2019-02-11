@@ -1,0 +1,47 @@
+<br>
+<br>
+
+<div class="row">
+  <div class="col-lg-2">
+    <label>First Name</label>
+    <input type="text" class="form-control" [value]="first_Name" [(ngModel)]="first_Name">
+  </div>
+  <div class="col-lg-3">
+    <label>Last Name</label>
+    <input type="text" class="form-control" [value]="last_Name" [(ngModel)]="last_Name">
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-lg-2">
+    <label>Email address</label>
+    <input type="text" class="form-control" [value]="emailAddress" [(ngModel)]="emailAddress">
+  </div>
+  <div class="col-lg-3">
+    <label>Mailing Address</label>
+    <input type="text" class="form-control" [value]="address" [(ngModel)]="address">
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-lg-2">
+    <label>City</label>
+    <input type="text" class="form-control" [value]="city" [(ngModel)]="city">
+  </div>
+  <div class="col-lg-3">
+    <label>State</label>
+    <input type="text" class="form-control" [value]="state" [(ngModel)]="state">
+  </div>
+  <div class="col-lg-2">
+    <label>Zipcode</label>
+    <input type="text" class="form-control" [value]="zipCode" [(ngModel)]="zipCode">
+  </div>
+</div>
+<br>
+<button type="submit" class="btn btn-primary" (click)="editUser()">Submit</button>
+&nbsp;
+&nbsp;
+<button type="submit" class="btn btn-primary" (click)="deleteUser()" routerLink="/dashboard">Delete Customer</button>
+<h3>{{resultMsg}}</h3>

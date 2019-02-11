@@ -1,0 +1,26 @@
+<span style="color: white; font-family: Georgia; font-size: 20px">
+  Where should we send the student data?
+</span>
+<h3>{{emailStatus}}</h3>
+<!--<input id="str" [(ngModel)]="submitText" placeholder="Ex: john.doe@null.com"/>-->
+<form>
+  <input type="text" name="search" [(ngModel)]="submitText" placeholder="Ex: john.doe@null.com"><i class="fa fa-envelope-o"></i>
+  &nbsp;
+  &nbsp;
+  <input type="text" name="body" [(ngModel)]="subjectText" placeholder="Subject" required><i class="fa fa-envelope-o"></i>
+</form>
+<br>
+<br>
+<input type="text" style="text-align: center" class="input-large" name="body" [(ngModel)]="bodyText" placeholder="Body">
+<br>
+<br>
+<button type="button" class="btn btn-success btn-lg" (click)="sendEmail()">Send Email</button>
+
+
+
+
+<!--<button class="button" (click)="sendEmail()">Send the database!</button>-->
+
+
+
+
