@@ -31,7 +31,7 @@ export class AddStudentComponent implements OnInit {
   }
 
   /**
-   * validates new customer fields and calls the service to add to database.
+   * validates new student fields and calls the service to add to database.
    */
   processUser() {
     if (this.newFirst === '' ||
@@ -46,13 +46,13 @@ export class AddStudentComponent implements OnInit {
       (this.newState === this.newState.toLowerCase())) {
       this.resultMsg = 'State must contain only 2 characters and be all uppercase.';
     } else {
-      this.resultMsg = 'Added new customer!';
+      this.resultMsg = 'Added new student!';
       const person = {
         firstName: this.newFirst, last: this.newLast,
         email: this.newEmail, address: this.newAddress,
         city: this.newCity, state: this.newState, zip: this.newZip
       };
-      this.studentService.addCust(person).subscribe(() => {
+      this.studentService.addStud(person).subscribe(() => {
       });
       window.location.reload();
 

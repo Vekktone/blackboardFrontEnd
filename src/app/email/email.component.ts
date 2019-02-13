@@ -31,7 +31,7 @@ export class EmailComponent implements OnInit {
    */
   sendEmail(): void {
     if (this.validateEmail(this.submitText)) {
-      this.emailService.sendEmail(this.submitText, this.subjectText, this.bodyText, this.studentService.cList).subscribe();
+      this.emailService.sendEmail(this.submitText, this.subjectText, this.bodyText, this.studentService.sList).subscribe();
       this.emailStatus = '***Success! Go check your email!!***';
     } else if (this.submitText === '' || this.subjectText === '' || this.bodyText === '') {
       this.emailStatus = '***Some forms are missing. Please fill out all forms.***';

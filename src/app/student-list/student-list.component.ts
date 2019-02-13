@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 })
 
 export class StudentListComponent implements OnInit {
-  public customersMain: Observable<Array<any>>;
+  public studentsMain: Observable<Array<any>>;
   searchText: String;
   filter: String;
   resultMessage: String;
@@ -22,7 +22,7 @@ export class StudentListComponent implements OnInit {
   }
 
   /**
-   * OnInit method which initializes the table with our default customer file
+   * OnInit method which initializes the table with our default student file
    */
   ngOnInit() {
     this.getRecords('10');
@@ -46,7 +46,7 @@ export class StudentListComponent implements OnInit {
 
     // console.log(num);
     this.resultMessage = '';
-    this.customersMain = this.studentService.getRecords(finalVal);
+    this.studentsMain = this.studentService.getRecords(finalVal);
     this.currentResultsPerPage = finalVal;
   }
 
@@ -58,9 +58,9 @@ export class StudentListComponent implements OnInit {
       this.resultMessage = 'Invalid entry. Please type a valid query';
       return;
     } else {
-      this.customersMain = this.studentService.searchData(this.searchText);
+      this.studentsMain = this.studentService.searchData(this.searchText);
 
-      this.customersMain.subscribe(data => {
+      this.studentsMain.subscribe(data => {
         if (data[0] === undefined) {
           this.resultMessage = 'No results found';
           return;
@@ -72,7 +72,7 @@ export class StudentListComponent implements OnInit {
   }
 
   /**
-   * sets the person in customer service to have attributes of currently selected customer for editing purposes.
+   * sets the person in student service to have attributes of currently selected student for editing purposes.
    * @param {number} id
    * @param {String} first
    * @param {String} last

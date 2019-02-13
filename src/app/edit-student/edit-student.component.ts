@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {StudentService} from '../shared';
 
+
 @Component({
   selector: 'app-edit-student',
   templateUrl: './edit-student.component.html',
@@ -31,7 +32,7 @@ export class EditStudentComponent implements OnInit {
   }
 
   /**
-   * defaults to set customer details to input fields.
+   * defaults to set student details to input fields.
    */
   ngOnInit() {
     if (this.studentService.person != null) {
@@ -47,7 +48,7 @@ export class EditStudentComponent implements OnInit {
   }
 
   /**
-   * edits customer and displays their current info in input fields.
+   * edits student and displays their current info in input fields.
    */
   editUser() {
     if (this.first_Name === '' ||
@@ -61,20 +62,20 @@ export class EditStudentComponent implements OnInit {
     } else if (this.state.length > 2 || this.state === this.state.toLowerCase()) {
       this.resultMsg = 'State must contain only 2 characters and be all uppercase.';
     } else {
-      this.resultMsg = 'Successfully Edited Customer!';
+      this.resultMsg = 'Successfully edited student!';
       const person = {
         firstName: this.first_Name, last: this.last_Name,
         email: this.emailAddress, address: this.address,
         city: this.city, state: this.state, zip: this.zipCode
       };
       console.log(this.ident);
-      this.studentService.editCust(person, this.ident).subscribe(() => {
+      this.studentService.editStud(person, this.ident).subscribe(() => {
       });
     }
   }
 
   /**
-   * deletes a customer from the database and checks for missing fields.
+   * deletes a student from the database and checks for missing fields.
    */
   deleteUser() {
 
@@ -87,14 +88,14 @@ export class EditStudentComponent implements OnInit {
       this.zipCode === '') {
       this.resultMsg = 'Some forms are missing. Please fill out all fields.';
     } else {
-      this.resultMsg = 'Successfully Deleted Customer!';
+      this.resultMsg = 'Successfully deleted student!';
       const person = {
         firstName: this.first_Name, last: this.last_Name,
         email: this.emailAddress, address: this.address,
         city: this.city, state: this.state, zip: this.zipCode
       };
       console.log(this.ident);
-      this.studentService.deleteCust(person, this.ident).subscribe(() => {
+      this.studentService.deleteStud(person, this.ident).subscribe(() => {
       });
       location.reload();
     }

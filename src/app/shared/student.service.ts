@@ -4,15 +4,14 @@ import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 
 /**
- * Customer Service which handles calls to the API relating to getting and updating the database.
+ * Student Service which handles calls to the API relating to getting and updating the database.
  */
 @Injectable()
 export class StudentService {
 
   constructor(private http: HttpClient) {
   }
-
-  cList: Array<any>;
+  sList: Array<any>;
   person: any;
 
   /**
@@ -21,62 +20,62 @@ export class StudentService {
    * @returns {Observable<any>}
    */
   getRecords(num: number): Observable<any> {
-    return this.http.get('http://localhost:8080/customer/getRecords/' + num).pipe(
+    return this.http.get('http://localhost:8080/student/getRecords/' + num).pipe(
       tap((data: any) => {
-        this.cList = data;
+        this.sList = data;
       }),
       catchError(this.handleError<any>('getRecords')),
     );
   }
 
   /**
-   * search endpoint call to find a record in the databse by first, last, or email.
+   * search endpoint call to find a record in the database by first, last, or email.
    * @param {String} searchText
    * @returns {Observable<any>}
    */
   searchData(searchText: String): Observable<any> {
-    return this.http.get('http://localhost:8080/customer/searchData/' + searchText).pipe(
+    return this.http.get('http://localhost:8080/student/searchData/' + searchText).pipe(
       tap((data: any) => {
-        this.cList = data;
+        this.sList = data;
       }),
       catchError(this.handleError<any>('searchData')),
     );
   }
 
   /**
-   * endpoint call for adding a customer into the database.
-   * @param {Object} customer
+   * endpoint call for adding a student into the database.
+   * @param {Object} student
    * @returns {Observable<any>}
    */
-  addCust(customer: Object) {
-    return this.http.post('http://localhost:8080/customer/addCust', customer).pipe(
-      catchError(this.handleError<any>('addCust'))
+  addStud(student: Object) {
+    return this.http.post('http://localhost:8080/student/addStud', student).pipe(
+      catchError(this.handleError<any>('addStud'))
     );
   }
 
   /**
-   * endpoint call for editiing an existing customer in the databse.
-   * @param {Object} customer
-   * @param {number} ident
+   * endpoint call for editing an existing student in the database.
+   * @param {Object} student
+   * @param {number} id
    * @returns {Observable<any>}
    */
-  editCust(customer: Object, ident: number) {
-    const editObj = {customer: customer, id: ident};
-    return this.http.post('http://localhost:8080/customer/editCust', editObj).pipe(
-      catchError(this.handleError<any>('editCust'))
+  editStud(student: Object, id: number) {
+    const editObj = {student: student, id: id};
+    return this.http.post('http://localhost:8080/student/editStud', editObj).pipe(
+      catchError(this.handleError<any>('editStud'))
     );
   }
 
   /**
-   * endpoint call for deleting a customer from the database.
-   * @param {Object} customer
+   * endpoint call for deleting a student from the database.
+   * @param {Object} student
    * @param {number} ident
    * @returns {Observable<any>}
    */
-  deleteCust(customer: Object, ident: number) {
-    const editObj = {customer: customer, id: ident};
-    return this.http.post('http://localhost:8080/customer/deleteCust', editObj).pipe(
-      catchError(this.handleError<any>('editCust'))
+  deleteStud(student: Object, ident: number) {
+    const editObj = {student: student, id: ident};
+    return this.http.post('http://localhost:8080/student/deleteStud', editObj).pipe(
+      catchError(this.handleError<any>('editStud'))
     );
   }
 

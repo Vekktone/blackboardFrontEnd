@@ -44,8 +44,8 @@
     <th class="btn-success" scope="col" bgcolor="#00b300" (click)="sortTable(5)">State</th>
     <th class="btn-success" scope="col" bgcolor="#00b300" (click)="sortTable(6)">Zipcode</th>
   </tr>
-  <tr *ngFor="let x of customersMain | async">
-    <td class="btn-default" routerLink="/editCustomer" (click)="editCust(x.id,x.firstName,x.last,x.email,x.address,x.city,x.state,x.zip)">{{ x.firstName }}</td>
+  <tr *ngFor="let x of studentsMain | async">
+    <td class="btn-default" routerLink="/editStudent" (click)="editCust(x.id,x.firstName,x.last,x.email,x.address,x.city,x.state,x.zip)">{{ x.firstName }}</td>
     <td>{{ x.last }}</td>
     <td>{{ x.email }}</td>
     <td>{{ x.address }}</td>
