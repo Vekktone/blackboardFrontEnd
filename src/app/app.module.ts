@@ -13,10 +13,13 @@ import {EmailComponent} from './email/email.component';
 import {FormUploadComponent} from './form-upload/form-upload.component';
 import {UploadFileService} from './shared/upload-file.service';
 
-import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import {AppRoutingModule} from './/app-routing.module';
 import {AddStudentComponent} from './add-student/add-student.component';
 import {EditStudentComponent} from './edit-student/edit-student.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 /**
@@ -36,8 +39,11 @@ import {EditStudentComponent} from './edit-student/edit-student.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BsDropdownModule.forRoot(),
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatButtonToggleModule
   ],
   exports: [],
   providers: [StudentService, EmailService, UploadFileService, StudentListComponent, EmailComponent, AddStudentComponent],
