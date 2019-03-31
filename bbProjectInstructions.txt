@@ -1,0 +1,20 @@
+install node js at https://nodejs.org/en/ (verfiy in a terminal with npm -v)
+install angular: using a terminal, run npm install -g @angular/cli (verfiy in terminal with ng v)
+install mysql at https://dev.mysql.com/downloads/mysql/ (must make account for this) (should run server once install is complete on local host 3306)
+install angular material with npm install --save @angular/material @angular/cdk @angular/animations
+
+launch intellij, open back end project, go to View->Tool Windows->Database
+	click the settings icon (datasource properties)
+	click add->MySql
+	enter in root and password, use "students" for databse (may need to create the database first and make schema called "students", but don't add any tables), click test connection to verify
+	add file customers.txt to C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/students.txt
+	if successful, change info in config.properties and LogInfo.java to match your info (login credentials and file locations)
+	
+running it:
+	run the back end using the run button
+	for front end:
+		launch a terminal in intellij and run ng serve --open
+		go to http://localhost:4200/ to see the webpage
+
+Useful tools:
+	Postman (used for testing endpoints)
