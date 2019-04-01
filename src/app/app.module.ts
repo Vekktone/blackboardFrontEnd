@@ -20,6 +20,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { LoginComponent } from './login/login.component';
+import {MatCardModule, MatInputModule, MatProgressSpinnerModule} from "@angular/material";
 
 
 /**
@@ -33,6 +35,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     FormUploadComponent,
     AddStudentComponent,
     EditStudentComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,11 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatCardModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    ReactiveFormsModule,
   ],
   exports: [],
   providers: [StudentService, EmailService, UploadFileService, StudentListComponent, EmailComponent, AddStudentComponent],
