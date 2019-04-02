@@ -1,0 +1,13 @@
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url("https://34yigttpdc638c2g11fbif92-wpengine.netdna-ssl.com/wp-content/uploads/2016/09/default-user-img-300x300.jpg");
+  background-size: cover;
+}
+
+.user-image {
+  width: 400px;
+  height: 400px;
+}
