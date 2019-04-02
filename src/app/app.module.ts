@@ -21,8 +21,16 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { LoginComponent } from './login/login.component';
-import {MatCardModule, MatInputModule, MatProgressSpinnerModule} from "@angular/material";
-
+import {MatCardModule, MatInputModule, MatProgressSpinnerModule, MatSidenavModule, MatIconModule, MatListModule} from "@angular/material";
+import { MainHubComponent } from './main-hub/main-hub.component';
+import { NavComponent } from './nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { DiscussionComponent } from './discussion/discussion.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { EmailPageComponent } from './email-page/email-page.component';
+import { AnnouncementsComponent } from './announcements/announcements.component';
+import { CoursesComponent } from './courses/courses.component';
 
 /**
  * declarations, imports, providers, etc...
@@ -36,6 +44,13 @@ import {MatCardModule, MatInputModule, MatProgressSpinnerModule} from "@angular/
     AddStudentComponent,
     EditStudentComponent,
     LoginComponent,
+    MainHubComponent,
+    NavComponent,
+    DiscussionComponent,
+    CalendarComponent,
+    EmailPageComponent,
+    AnnouncementsComponent,
+    CoursesComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +66,11 @@ import {MatCardModule, MatInputModule, MatProgressSpinnerModule} from "@angular/
     MatInputModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule,
+    MatSidenavModule,
+    LayoutModule,
+    MatIconModule,
+    MatListModule,
+    FlexLayoutModule,
   ],
   exports: [],
   providers: [StudentService, EmailService, UploadFileService, StudentListComponent, EmailComponent, AddStudentComponent],

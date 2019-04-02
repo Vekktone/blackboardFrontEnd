@@ -23,6 +23,6 @@ export class LoginComponent implements OnInit {
 
   login() {
     console.log("Logged in.");
-    this.router.navigateByUrl('/dashboard');
+    this.router.navigate(["/mainHub/" + this.loginForm.get('username').value]);
   }
 }

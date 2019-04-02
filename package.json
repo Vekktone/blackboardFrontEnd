@@ -17,6 +17,7 @@
     "@angular/compiler": "^7.2.11",
     "@angular/compiler-cli": "^7.2.11",
     "@angular/core": "^7.2.11",
+    "@angular/flex-layout": "^7.0.0-beta.24",
     "@angular/forms": "^6.1.10",
     "@angular/http": "^6.1.10",
     "@angular/material": "^7.3.6",
@@ -25,7 +26,10 @@
     "@angular/router": "^6.1.10",
     "and": "0.0.3",
     "core-js": "^2.6.5",
+    "hammerjs": "^2.0.8",
+    "material-design-icons": "^3.0.1",
     "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.4.0",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {

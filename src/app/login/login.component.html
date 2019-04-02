@@ -1,6 +1,10 @@
+<h1>
+  Blackboard Remake V1
+</h1>
+
 <mat-card class="example-card" style="width: 500px; margin: auto">
   <mat-card-header style="display: block;">
-    <mat-card-title>Login</mat-card-title>
+    <mat-card-title>Enter Credentials</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <form class="example-form" [formGroup]="loginForm">
@@ -26,3 +30,6 @@
     <button mat-raised-button [disabled]="!loginForm.valid" color="primary" (click)="login()">Login</button>
   </mat-card-actions>
 </mat-card>
+<div style="text-align:center; color: white">
+  <h5 style="color: white">Created with Angular + Material</h5>
+</div>
