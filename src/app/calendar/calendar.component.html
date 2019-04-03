@@ -1,4 +1,14 @@
 <app-nav [userType]="userType"></app-nav>
-<p>
-  calendar works!
-</p>
+<div class="calendar-container mat-elevation-z3">
+  <xunk-calendar [selectedDate]="selDate"
+                 [heatmap]="heatmap"
+                 (change)="dateChanged($event)"
+                 heatMapColor="#00ffff"
+                 primaryColor="#673ab7"
+                 primaryForeground="white">
+  </xunk-calendar>
+</div>
+
+<br>
+Selected Date is {{ selDate.year }}-{{ selDate.month + 1}}-{{ selDate.date }}
+<br><br>

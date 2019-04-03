@@ -30,6 +30,7 @@
     "material-design-icons": "^3.0.1",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.4.0",
+    "xunk-calendar": "^2.0.1",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {

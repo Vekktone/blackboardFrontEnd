@@ -31,6 +31,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { EmailPageComponent } from './email-page/email-page.component';
 import { AnnouncementsComponent } from './announcements/announcements.component';
 import { CoursesComponent } from './courses/courses.component';
+import {XunkCalendarModule} from "xunk-calendar";
 
 /**
  * declarations, imports, providers, etc...
@@ -71,6 +72,7 @@ import { CoursesComponent } from './courses/courses.component';
     MatIconModule,
     MatListModule,
     FlexLayoutModule,
+    XunkCalendarModule,
   ],
   exports: [],
   providers: [StudentService, EmailService, UploadFileService, StudentListComponent, EmailComponent, AddStudentComponent],

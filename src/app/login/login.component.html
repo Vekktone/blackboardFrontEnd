@@ -29,6 +29,7 @@
   <mat-card-actions>
     <button mat-raised-button [disabled]="!loginForm.valid" color="primary" (click)="login()">Login</button>
   </mat-card-actions>
+  <span style="color: red">{{errorMessage}}</span>
 </mat-card>
 <div style="text-align:center; color: white">
   <h5 style="color: white">Created with Angular + Material</h5>
