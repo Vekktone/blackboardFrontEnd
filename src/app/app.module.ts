@@ -21,7 +21,15 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { LoginComponent } from './login/login.component';
-import {MatCardModule, MatInputModule, MatProgressSpinnerModule, MatSidenavModule, MatIconModule, MatListModule} from "@angular/material";
+import {
+  MatCardModule,
+  MatInputModule,
+  MatProgressSpinnerModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  MatTableModule
+} from '@angular/material';
 import { MainHubComponent } from './main-hub/main-hub.component';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -73,6 +81,7 @@ import {XunkCalendarModule} from "xunk-calendar";
     MatListModule,
     FlexLayoutModule,
     XunkCalendarModule,
+    MatTableModule,
   ],
   exports: [],
   providers: [StudentService, EmailService, UploadFileService, StudentListComponent, EmailComponent, AddStudentComponent],
