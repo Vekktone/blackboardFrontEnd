@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Reply to Thread</h1>
+<div mat-dialog-content>
+  <p>Enter Username</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="username">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+
+  <div mat-dialog-content>
+    <p>Enter Reply</p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="reply">
+    </mat-form-field>
+  </div>
+</div>
+
+<div>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="submitReply()" cdkFocusInitial>Add</button>
+</div>

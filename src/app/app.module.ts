@@ -28,7 +28,7 @@ import {
   MatSidenavModule,
   MatIconModule,
   MatListModule,
-  MatTableModule
+  MatTableModule, MatDialogModule
 } from '@angular/material';
 import { MainHubComponent } from './main-hub/main-hub.component';
 import { NavComponent } from './nav/nav.component';
@@ -40,6 +40,11 @@ import { EmailPageComponent } from './email-page/email-page.component';
 import { AnnouncementsComponent } from './announcements/announcements.component';
 import { CoursesComponent } from './courses/courses.component';
 import {XunkCalendarModule} from "xunk-calendar";
+import { AddAnnouncementComponent } from './add-announcement/add-announcement.component';
+import { GradesTableComponent } from './grades-table/grades-table.component';
+import { ContentTableComponent } from './content-table/content-table.component';
+import { DiscussionTableComponent } from './discussion-table/discussion-table.component';
+import { PostReplyComponent } from './post-reply/post-reply.component';
 
 /**
  * declarations, imports, providers, etc...
@@ -60,6 +65,11 @@ import {XunkCalendarModule} from "xunk-calendar";
     EmailPageComponent,
     AnnouncementsComponent,
     CoursesComponent,
+    AddAnnouncementComponent,
+    GradesTableComponent,
+    ContentTableComponent,
+    DiscussionTableComponent,
+    PostReplyComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,9 +92,11 @@ import {XunkCalendarModule} from "xunk-calendar";
     MatListModule,
     FlexLayoutModule,
     XunkCalendarModule,
+    MatDialogModule
   ],
   exports: [],
-  providers: [StudentService, EmailService, UploadFileService, StudentListComponent, EmailComponent, AddStudentComponent],
+  entryComponents: [AddAnnouncementComponent, GradesTableComponent, ContentTableComponent, DiscussionTableComponent, PostReplyComponent],
+  providers: [StudentService, EmailService, UploadFileService, StudentListComponent, EmailComponent, AddStudentComponent, MatDialogModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,19 +1,28 @@
 <app-nav [userType]="userType"></app-nav>
+<h3 style="font-size: 50px">Enter a message for discussion.</h3>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin: auto;width: 50%;margin-top: 50px">
 
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
 
-<div class="container">
-  <div class="form-group">
-    <label>
-      Message:
-    </label>
-    <input type="text" [(ngModel)]="body"/>
-  </div>
-  <div class="form-group">
-    <button mat-raised-button (click)="myFunc()" class="btn btn-dark">Send message</button>
-  </div>
-</div>
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center"> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
 
+  <!-- Name Column -->
+  <ng-container matColumnDef="course">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center"> Course </th>
+    <td mat-cell *matCellDef="let element"> {{element.course}} </td>
+  </ng-container>
 
-<div *ngIf="showMessage">
-  Your Message: {{ body }}
-</div>
+  <!-- Weight Column -->
+  <ng-container matColumnDef="announcement">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center"> Thread </th>
+    <td mat-cell style="cursor: pointer" *matCellDef="let element" (click)="openDiscussionTable(element.announcement)"> {{element.announcement}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

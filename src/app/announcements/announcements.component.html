@@ -1,25 +1,30 @@
 <app-nav [userType]="userType"></app-nav>
-<div>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<h3 style="font-size: 50px">Current Announcements</h3>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin: auto;width: 50%;margin-top: 50px">
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
   <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}}</td>
+    <th mat-header-cell *matHeaderCellDef style="text-align: center"> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
   </ng-container>
 
+  <!-- Name Column -->
   <ng-container matColumnDef="course">
-    <th mat-header-cell *matHeaderCellDef> Course </th>
-    <td mat-cell *matCellDef="let element"> {{element.course}}</td>
+    <th mat-header-cell *matHeaderCellDef style="text-align: center"> Course </th>
+    <td mat-cell *matCellDef="let element"> {{element.course}} </td>
   </ng-container>
 
+  <!-- Weight Column -->
   <ng-container matColumnDef="announcement">
-    <th mat-header-cell *matHeaderCellDef> Announcement </th>
-    <td mat-cell *matCellDef="let element"> {{element.announcement}}</td>
+    <th mat-header-cell *matHeaderCellDef style="text-align: center"> Announcement </th>
+    <td mat-cell *matCellDef="let element"> {{element.announcement}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-</div>
+
+<button *ngIf="canAddAnnouncements" mat-raised-button style="margin-top: 30px" (click)="openAnnouncementDialog()">Create New Announcement</button>

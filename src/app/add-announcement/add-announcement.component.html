@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+  <p>Enter Course Id</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="courseId">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+
+  <div mat-dialog-content>
+    <p>Enter Announcement Details</p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="descriptionText">
+    </mat-form-field>
+  </div>
+</div>
+
+<div>
+<button mat-button (click)="onNoClick()">Cancel</button>
+<button mat-button (click)="submitAnnouncement()" cdkFocusInitial>Add</button>
+</div>

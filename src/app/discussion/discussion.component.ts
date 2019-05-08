@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Announcements} from '../announcements/announcements.component';
-import {FormsModule} from '@angular/forms';
-import {NgForm} from '@angular/forms';
+import {MatDialog} from '@angular/material';
+import {DiscussionTableComponent} from '../discussion-table/discussion-table.component';
+
+let arr = [
+  {position: 1, course: 'CS1234', announcement: 'Homework 3'},
+  {position: 2, course: 'CS4253', announcement: 'Report Guidelines'},
+  {position: 3, course: 'CS4833', announcement: 'Test Review'},
+];
 
 @Component({
   selector: 'app-discussion',
   templateUrl: './discussion.component.html',
-  imports: [FormsModule],
   styleUrls: ['./discussion.component.css']
 })
 
@@ -17,8 +21,10 @@ export class DiscussionComponent implements OnInit {
   subject: string;
   body: string;
   showMessage: boolean;
+  displayedColumns: string[] = ['position', 'course', 'announcement'];
+  dataSource = arr;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, public dialog: MatDialog) {
     this.subject = '';
     this.body = '';
     this.showMessage = false;
@@ -29,8 +35,22 @@ export class DiscussionComponent implements OnInit {
 
   }
 
-  myFunc() {
+  showIt() {
     this.showMessage = true;
   }
+
+  openDiscussionTable(course: string) {
+
+    const dialogRef = this.dialog.open(DiscussionTableComponent, {
+      width: '1000px',
+      data: {title: course}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+
+  }
+
 
 }

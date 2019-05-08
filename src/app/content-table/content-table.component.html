@@ -1,0 +1,20 @@
+<h3 style="text-align: center">{{data.title}} Content</h3>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin: auto;width: 50%;margin-top: 50px">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+  <ng-container matColumnDef="No">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Item">
+    <th mat-header-cell *matHeaderCellDef> Assignment Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.course}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<button style="float: right" mat-button (click)="onNoClick()">Close</button>
